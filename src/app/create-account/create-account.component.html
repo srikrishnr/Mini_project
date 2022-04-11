@@ -1,0 +1,58 @@
+<!-- <p>create-account works!</p> -->
+<div class="make-middle">
+    <form class="container look-good" [formGroup]="signupform">
+
+        <div class="mb-3 mt-3">
+            <label for="FirsatName" class="form-label">FirsatName</label>
+            <input type="text" class="form-control" id="FirsatName" placeholder="Enter FirsatName"
+                formControlName="First_name">
+            <div class="error-text">
+                <p>{{fistValidation}}</p>
+            </div>
+        </div>
+
+        <div class="mb-3 mt-3">
+            <label for="Last_Name" class="form-label">LastName</label>
+            <input type="text" class="form-control" id="Last_Name" placeholder="Enter LastName"
+                formControlName="Last_Name">
+            <div class="error-text">
+                <p>{{secondNameValidation}}</p>
+            </div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="Email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="Email" placeholder="Enter Email" formControlName="Email">
+            <p class="error-text">{{validationEmail}}</p>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="Mobile_Number" class="form-label">Mobile_Number</label>
+            <input type="text" class="form-control" id="Mobile_Number" placeholder="Enter Mobile_Number"
+                formControlName="Mobile_Number">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="Password" class="form-label">Password</label>
+            <input type="text" class="form-control" id="Password" placeholder="Enter Password"
+                formControlName="Password">
+            <!-- <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                <div *ngIf="f.password.errors.required">Password is required.</div>
+            </div> -->
+        </div>
+
+        <div class="mb-3 mt-3">
+            <label for="confirm_password" class="form-label">Confirm Password</label>
+            <input type="text" class="form-control" id="confirm_password" placeholder="Enter confirm_password"
+                formControlName="confirm_password" name="confirm_password">
+            <div class="error-text">
+                <p>{{passcheck}}</p>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="Date_of_birth" class="form-label">Date of birth</label>
+            <input type="text" class="form-control" id="Date_of_birth" formControlName="Date_of_birth"
+                placeholder="Enter Date_of_birth" name="Date_of_birth">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="Submitform()" [disabled]="this.flag">Submit</button>
+    </form>
+</div>
+<router-outlet></router-outlet>
